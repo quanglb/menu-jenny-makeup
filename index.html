@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jenny Makeup - Price List</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+  <!-- html2canvas for exporting high-res 9:16 image -->
+  <script src="html2canvas.min.js"></script>
+</head>
+<body>
+  <!-- Action Bar for viewing & exporting -->
+  <header class="app-toolbar no-print">
+    <div class="toolbar-nav">
+      <a href="index.html" class="nav-tab active">📋 Bảng Giá</a>
+      <a href="course.html" class="nav-tab">🎓 Khóa Học</a>
+    </div>
+    <div class="toolbar-actions">
+      <button id="btnZoom" class="btn btn-secondary" title="Chuyển chế độ xem vừa màn hình / xem kích thước gốc">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
+        <span id="zoomText">Vừa màn hình</span>
+      </button>
+      <button id="btnDownload" class="btn btn-primary" title="Tải ảnh chuẩn story 9:16 chất lượng cao">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+        <span>Tải ảnh HD (PNG)</span>
+      </button>
+      <button id="btnPrint" class="btn btn-secondary" title="In hoặc lưu PDF">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 6 2 18 2 18 9"></polyline><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path><rect x="6" y="14" width="12" height="8"></rect></svg>
+        <span>In / PDF</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- 9:16 Poster Card Wrapper -->
+  <div class="page-viewport">
+    <div class="page-container" id="scaler">
+      <main id="priceCard" class="price-card aspect-9-16">
+        <!-- Decorative Background Elements -->
+        <div class="bg-decorations" aria-hidden="true">
+          <!-- Top-left vintage mirror glow & soft frame rim -->
+          <div class="decor-mirror-ring"></div>
+          <div class="decor-mirror-rim"></div>
+          
+          <!-- Top-right soft white silk floral element -->
+          <div class="decor-flower-group">
+            <div class="petal petal-1"></div>
+            <div class="petal petal-2"></div>
+            <div class="petal petal-3"></div>
+            <div class="petal petal-4"></div>
+          </div>
+          
+          <!-- Bottom-right luxury makeup brush soft bristles & handle -->
+          <div class="decor-brush-group">
+            <div class="brush-ferrule"></div>
+            <div class="brush-bristles"></div>
+            <div class="brush-powder-glow"></div>
+          </div>
+          
+          <!-- Warm ambient lighting and subtle paper/linen texture -->
+          <div class="decor-ambient-light"></div>
+          <div class="decor-ambient-light-bottom"></div>
+          <div class="decor-texture"></div>
+        </div>
+
+        <!-- Main Content Container -->
+        <div class="card-content">
+          
+          <!-- HEADER / BRANDING -->
+          <header class="brand-header">
+            <!-- Monogram Logo JM -->
+            <div class="logo-wrapper">
+              <div class="monogram-logo">
+                <span class="monogram-letter m-left">J</span>
+                <span class="monogram-letter m-right">M</span>
+                <svg class="sparkle-icon" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 0L14.2 9.8L24 12L14.2 14.2L12 24L9.8 14.2L0 12L9.8 9.8L12 0Z"/>
+                </svg>
+              </div>
+            </div>
+
+            <h1 class="brand-name">J E N N Y M A K E U P</h1>
+            <div class="brand-subtitle-wrap">
+              <span class="sub-line"></span>
+              <span class="brand-subtitle">~ makeup artist ~</span>
+              <span class="sub-line"></span>
+            </div>
+          </header>
+
+          <!-- TITLE: PRICE LIST & BADGE -->
+          <section class="price-title-section">
+            <div class="title-container">
+              <h2 class="main-price-title">Price List</h2>
+              
+              <!-- Circular "MAKEUP ARTIST" badge with 4-point sparkle -->
+              <div class="curved-badge" title="Makeup Artist">
+                <svg class="badge-sparkle" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 0L14.4 9.6L24 12L14.4 14.4L12 24L9.6 14.4L0 12L9.6 9.6L12 0Z"/>
+                </svg>
+                <svg class="badge-circle-text" viewBox="0 0 100 100">
+                  <defs>
+                    <path id="circlePath" d="M 50, 50 m -35, 0 a 35,35 0 1,1 70,0 a 35,35 0 1,1 -70,0" />
+                  </defs>
+                  <text font-family="'Montserrat', sans-serif" font-size="9" font-weight="600" letter-spacing="3" fill="#584234">
+                    <textPath href="#circlePath" startOffset="0%">
+                      MAKEUP • ARTIST •
+                    </textPath>
+                  </text>
+                </svg>
+              </div>
+            </div>
+          </section>
+
+          <!-- PRICING BODY (1 COLUMN) -->
+          <div class="pricing-body single-column">
+
+            <!-- 1. DAILY -->
+            <section class="menu-category">
+              <div class="category-header">
+                <h3 class="category-title">DAILY</h3>
+                <div class="cat-line"></div>
+              </div>
+              <div class="service-list">
+                <div class="service-row">
+                  <div class="service-left">
+                    <span class="bullet">•</span>
+                    <span class="service-name">Cơ bản <span class="service-sub">(không tóc)</span></span>
+                  </div>
+                  <div class="service-price">250K</div>
+                </div>
+                <div class="service-row">
+                  <div class="service-left">
+                    <span class="bullet">•</span>
+                    <span class="service-name">Cơ bản <span class="service-sub">(kèm tóc)</span></span>
+                  </div>
+                  <div class="service-price">300K</div>
+                </div>
+              </div>
+            </section>
+
+            <!-- 2. KỶ YẾU & TỐT NGHIỆP -->
+            <section class="menu-category">
+              <div class="category-header">
+                <h3 class="category-title">KỶ YẾU & TỐT NGHIỆP</h3>
+                <div class="cat-line"></div>
+              </div>
+              <div class="service-list">
+                <div class="service-row">
+                  <div class="service-left">
+                    <span class="bullet">•</span>
+                    <span class="service-name">Kỷ yếu cơ bản</span>
+                  </div>
+                  <div class="service-price">350K</div>
+                </div>
+                <div class="service-row">
+                  <div class="service-left">
+                    <span class="bullet">•</span>
+                    <span class="service-name">Kỷ yếu Premium</span>
+                  </div>
+                  <div class="service-price">400K</div>
+                </div>
+              </div>
+            </section>
+
+            <!-- 3. PARTY -->
+            <section class="menu-category">
+              <div class="category-header">
+                <h3 class="category-title">PARTY</h3>
+                <div class="cat-line"></div>
+              </div>
+              <div class="service-list">
+                <div class="service-row">
+                  <div class="service-left">
+                    <span class="bullet">•</span>
+                    <span class="service-name">Tiệc cơ bản</span>
+                  </div>
+                  <div class="service-price">400K</div>
+                </div>
+                <div class="service-row">
+                  <div class="service-left">
+                    <span class="bullet">•</span>
+                    <span class="service-name">Tiệc Premium <span class="service-sub">(Đồ High-end + Hair riêng)</span></span>
+                  </div>
+                  <div class="service-price">550K</div>
+                </div>
+              </div>
+            </section>
+
+            <!-- 4. WEDDING -->
+            <section class="menu-category wedding-section">
+              <div class="category-header">
+                <h3 class="category-title">WEDDING</h3>
+                <div class="cat-line"></div>
+              </div>
+              <div class="service-list wedding-list">
+                <div class="service-row">
+                  <div class="service-left">
+                    <span class="bullet">•</span>
+                    <span class="service-name">Dặm ngõ</span>
+                  </div>
+                  <div class="service-price">700K</div>
+                </div>
+                <div class="service-row">
+                  <div class="service-left">
+                    <span class="bullet">•</span>
+                    <span class="service-name">Dâu Lễ ăn hỏi / Nạp tài</span>
+                  </div>
+                  <div class="service-price">1.300K</div>
+                </div>
+                <div class="service-row">
+                  <div class="service-left">
+                    <span class="bullet">•</span>
+                    <span class="service-name">Dâu Tiệc chính</span>
+                  </div>
+                  <div class="service-price">1.500K</div>
+                </div>
+                <div class="service-row">
+                  <div class="service-left">
+                    <span class="bullet">•</span>
+                    <span class="service-name">Make Bà sui</span>
+                  </div>
+                  <div class="service-price">500K</div>
+                </div>
+                <div class="service-row">
+                  <div class="service-left">
+                    <span class="bullet">•</span>
+                    <span class="service-name">Make Người nhà</span>
+                  </div>
+                  <div class="service-price">300K</div>
+                </div>
+                <div class="service-row">
+                  <div class="service-left">
+                    <span class="bullet">•</span>
+                    <span class="service-name">Make Test dâu</span>
+                  </div>
+                  <div class="service-price">700K</div>
+                </div>
+                <div class="service-row">
+                  <div class="service-left">
+                    <span class="bullet">•</span>
+                    <span class="service-name">Take care</span>
+                  </div>
+                  <div class="service-price">90K/h</div>
+                </div>
+              </div>
+              <p class="wedding-note-italic">
+                *(Giá cưới đã gồm tóc và cho mượn phụ kiện, khách hàng vui lòng giữ cẩn thận và trả lại sau khi đã sử dụng xong)*
+              </p>
+            </section>
+
+            <!-- 5. LƯU Ý -->
+            <section class="notes-category">
+              <h4 class="notes-heading">LƯU Ý:</h4>
+              <ul class="notes-list">
+                <li>
+                  <span class="bullet-star">✦</span>
+                  <span class="note-text">Phí di chuyển: 5k/km (từ 10km trở lên).</span>
+                </li>
+                <li>
+                  <span class="bullet-star">✦</span>
+                  <span class="note-text">Cọc 50% khi đặt lịch.</span>
+                </li>
+                <li>
+                  <span class="bullet-star">✦</span>
+                  <span class="note-text">Khách có nhu cầu thay đổi lịch báo trước 3 ngày, trường hợp huỷ lịch hoặc báo muộn SẼ KHÔNG hoàn cọc.</span>
+                </li>
+              </ul>
+              <div class="footer-divider-line"></div>
+            </section>
+
+            <!-- 6. FOOTER / CONTACT -->
+          <footer class="card-footer">
+            <div class="footer-top-row">
+              <a href="tel:0979887338" class="contact-item" title="Gọi điện">
+                <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                </svg>
+                <span class="contact-val">0979 887 338</span>
+              </a>
+              <div class="footer-v-divider"></div>
+              <a href="https://fb.com/jenny.mua520" target="_blank" rel="noopener noreferrer" class="contact-item" title="Facebook">
+                <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                </svg>
+                <span class="contact-val">fb.com/jenny.mua520</span>
+              </a>
+            </div>
+            <div class="footer-bottom-row">
+              <div class="contact-item">
+                <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                  <circle cx="12" cy="10" r="3"></circle>
+                </svg>
+                <span class="contact-val">Hà Nội - Xung quanh TP.Thanh Hoá</span>
+              </div>
+            </div>
+          </footer>
+
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

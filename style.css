@@ -1,0 +1,1001 @@
+/* ========================================================
+   JENNY MAKEUP - DESIGN SYSTEM & STYLESHEET (LIGHT LUXURY)
+   ======================================================== */
+
+:root {
+  --bg-main: #ebe3da;
+  --bg-card: #f2eae2;
+  --bg-card-gradient: radial-gradient(circle at 50% 18%, #fcf9f6 0%, #f4ede5 45%, #ebdcd0 100%);
+  --text-primary: #38261b;
+  --text-dark: #27170e;
+  --text-secondary: #5e4a3c;
+  --text-muted: #78665a;
+  --border-color: #d1c0b3;
+  --accent-gold: #c5a072;
+  
+  --font-serif: 'Cormorant Garamond', 'Playfair Display', Georgia, serif;
+  --font-display: 'Cinzel', serif;
+  --font-script: 'Alex Brush', cursive;
+  --font-sans: 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif;
+  
+  --card-width: 540px;
+  --card-height: 960px; /* Exact 9:16 for desktop/export */
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-sans);
+  background: var(--bg-main);
+  color: var(--text-primary);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow-x: hidden;
+}
+
+/* --- TOP TOOLBAR (LIGHT LUXURY CHAMPAGNE) --- */
+.app-toolbar {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 24px;
+  background: rgba(250, 246, 242, 0.92);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  border-bottom: 1px solid rgba(197, 160, 114, 0.25);
+  box-shadow: 0 2px 10px rgba(70, 45, 30, 0.05);
+}
+
+.toolbar-nav {
+  display: inline-flex;
+  gap: 4px;
+  background: rgba(0, 0, 0, 0.05);
+  padding: 3px;
+  border-radius: 20px;
+  border: 1px solid rgba(197, 160, 114, 0.2);
+}
+
+.nav-tab {
+  padding: 6px 14px;
+  font-size: 12.5px;
+  font-weight: 600;
+  color: #5c473a;
+  text-decoration: none;
+  border-radius: 16px;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.nav-tab:hover {
+  color: #241710;
+  background: rgba(255, 255, 255, 0.6);
+}
+
+.nav-tab.active {
+  background: #c5a072;
+  color: #241710;
+  box-shadow: 0 2px 6px rgba(197, 160, 114, 0.35);
+}
+
+.toolbar-actions {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 14px;
+  font-size: 12.5px;
+  font-weight: 600;
+  border-radius: 18px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: none;
+  font-family: var(--font-sans);
+  white-space: nowrap;
+}
+
+.btn-primary {
+  background: #c5a072;
+  color: #241710;
+  box-shadow: 0 2px 8px rgba(197, 160, 114, 0.35);
+}
+
+.btn-primary:hover {
+  background: #d4b185;
+  transform: translateY(-1px);
+}
+
+.btn-secondary {
+  background: #ffffff;
+  color: #38261b;
+  border: 1px solid #d8c8bc;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
+}
+
+.btn-secondary:hover {
+  background: #faf6f2;
+  color: #241710;
+}
+
+/* --- VIEWPORT CONTAINER --- */
+.page-viewport {
+  flex: 1;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 16px;
+  overflow: auto;
+}
+
+.page-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.2s ease;
+}
+
+/* --- 9:16 POSTER CARD (DESKTOP) --- */
+.price-card {
+  width: var(--card-width);
+  height: var(--card-height);
+  position: relative;
+  background: var(--bg-card-gradient);
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 0 12px 40px rgba(80, 55, 40, 0.15), 0 0 0 1px rgba(214, 196, 183, 0.6);
+  display: flex;
+  flex-direction: column;
+}
+
+/* --- DECORATIVE BACKGROUND ELEMENTS --- */
+.bg-decorations {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.decor-mirror-ring {
+  position: absolute;
+  top: -60px;
+  left: -80px;
+  width: 200px;
+  height: 260px;
+  border-radius: 50%;
+  border: 14px solid #b6997a;
+  box-shadow: 0 0 35px rgba(182, 153, 122, 0.4);
+  transform: rotate(-25deg);
+  opacity: 0.55;
+}
+
+.decor-mirror-rim {
+  position: absolute;
+  top: -50px;
+  left: -70px;
+  width: 180px;
+  height: 240px;
+  border-radius: 50%;
+  border: 2px solid #8e6c4e;
+  transform: rotate(-25deg);
+  opacity: 0.4;
+}
+
+.decor-flower-group {
+  position: absolute;
+  top: -30px;
+  right: -30px;
+  width: 220px;
+  height: 220px;
+  opacity: 0.8;
+}
+
+.petal {
+  position: absolute;
+  background: radial-gradient(ellipse at 40% 40%, #ffffff 0%, #f6f0eb 60%, #e2d3c5 100%);
+  border-radius: 70% 30% 60% 40% / 60% 40% 70% 30%;
+  box-shadow: 0 10px 25px rgba(180, 160, 140, 0.18);
+  filter: blur(0.5px);
+}
+
+.petal-1 { width: 140px; height: 110px; top: 0; right: 0; transform: rotate(15deg); }
+.petal-2 { width: 120px; height: 90px; top: 30px; right: 40px; transform: rotate(-35deg); opacity: 0.85; }
+.petal-3 { width: 100px; height: 80px; top: 70px; right: 10px; transform: rotate(45deg); opacity: 0.75; }
+.petal-4 { width: 80px; height: 70px; top: 10px; right: 80px; transform: rotate(10deg); opacity: 0.8; }
+
+.decor-brush-group {
+  position: absolute;
+  bottom: -40px;
+  right: -40px;
+  width: 220px;
+  height: 220px;
+  transform: rotate(-38deg);
+  opacity: 0.65;
+}
+
+.brush-ferrule {
+  position: absolute;
+  bottom: 0;
+  left: 30px;
+  width: 55px;
+  height: 90px;
+  background: linear-gradient(135deg, #a38260 0%, #e8d7c2 50%, #7d5e41 100%);
+  border-radius: 4px 4px 0 0;
+}
+
+.brush-bristles {
+  position: absolute;
+  bottom: 85px;
+  left: 20px;
+  width: 75px;
+  height: 120px;
+  background: radial-gradient(ellipse at 50% 80%, #2f231c 0%, #594235 45%, #c8b29c 85%, #ede3d8 100%);
+  border-radius: 50% 50% 15% 15%;
+  filter: blur(1px);
+}
+
+.brush-powder-glow {
+  position: absolute;
+  bottom: 120px;
+  left: -20px;
+  width: 140px;
+  height: 100px;
+  background: radial-gradient(circle, rgba(235, 215, 195, 0.4) 0%, rgba(235, 215, 195, 0) 70%);
+  filter: blur(8px);
+}
+
+.decor-ambient-light {
+  position: absolute;
+  top: 0;
+  left: 15%;
+  width: 70%;
+  height: 45%;
+  background: radial-gradient(ellipse at 50% 0%, rgba(255, 255, 255, 0.7) 0%, rgba(255, 255, 255, 0) 70%);
+}
+
+.decor-ambient-light-bottom {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 40%;
+  background: radial-gradient(circle at 10% 90%, rgba(210, 190, 175, 0.25) 0%, transparent 60%);
+}
+
+.decor-texture {
+  position: absolute;
+  inset: 0;
+  opacity: 0.03;
+  background-image: radial-gradient(#000 1px, transparent 1px);
+  background-size: 4px 4px;
+}
+
+/* --- CARD INNER LAYOUT --- */
+.card-content {
+  position: relative;
+  z-index: 2;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 24px 30px 18px 30px;
+}
+
+/* --- BRAND HEADER --- */
+.brand-header {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.logo-wrapper {
+  margin-bottom: 2px;
+}
+
+.monogram-logo {
+  position: relative;
+  display: inline-block;
+  font-family: 'Cinzel', serif;
+  font-size: 38px;
+  line-height: 1;
+  color: #38261b;
+  font-weight: 600;
+  letter-spacing: -2px;
+  height: 40px;
+}
+
+.monogram-letter {
+  display: inline-block;
+}
+
+.monogram-letter.m-left {
+  position: relative;
+  z-index: 2;
+  margin-right: -4px;
+}
+
+.monogram-letter.m-right {
+  position: relative;
+  z-index: 1;
+  color: #553e2f;
+  transform: translateY(2px);
+}
+
+.sparkle-icon {
+  position: absolute;
+  top: -2px;
+  right: -16px;
+  width: 15px;
+  height: 15px;
+  color: #38261b;
+}
+
+.brand-name {
+  font-family: var(--font-display);
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 5px;
+  color: #38261b;
+  margin-top: 2px;
+  text-transform: uppercase;
+}
+
+.brand-subtitle-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  width: 100%;
+  margin-top: -2px;
+}
+
+.brand-subtitle {
+  font-family: var(--font-script);
+  font-size: 26px;
+  color: #553f31;
+  font-weight: 400;
+  line-height: 1;
+}
+
+.sub-line {
+  height: 1px;
+  width: 46px;
+  background-color: #b8a291;
+  opacity: 0.6;
+}
+
+/* --- PRICE TITLE & CIRCULAR BADGE --- */
+.price-title-section {
+  position: relative;
+  margin-top: 8px;
+  margin-bottom: 4px;
+}
+
+.title-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.main-price-title {
+  font-family: 'Playfair Display', 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 56px;
+  font-weight: 500;
+  color: #2f1e14;
+  line-height: 0.95;
+  letter-spacing: 0.5px;
+  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.7);
+  transform: translateX(-16px);
+}
+
+.curved-badge {
+  position: absolute;
+  right: 14px;
+  top: -6px;
+  width: 66px;
+  height: 66px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.badge-circle-text {
+  width: 100%;
+  height: 100%;
+  animation: spinSlow 30s linear infinite;
+}
+
+@keyframes spinSlow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.badge-sparkle {
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  color: #4a3527;
+}
+
+/* --- COURSE TITLE SECTION --- */
+.course-title-section-match {
+  margin-top: 8px;
+  margin-bottom: 6px;
+}
+
+.course-header-text {
+  text-align: center;
+  transform: translateX(-12px);
+}
+
+.course-headline-main {
+  font-family: 'Playfair Display', var(--font-serif);
+  font-size: 21px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  color: #2b1a10;
+  line-height: 1.15;
+  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.7);
+}
+
+.course-headline-sub {
+  font-family: var(--font-sans);
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 3.5px;
+  color: #685040;
+  margin-top: 3px;
+  text-transform: uppercase;
+}
+
+/* --- PRICING & COURSE BODY --- */
+.pricing-body {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  justify-content: space-between;
+  margin-top: 2px;
+}
+
+.menu-category {
+  margin-bottom: 2px;
+}
+
+.category-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 4px;
+}
+
+.category-title {
+  font-family: var(--font-display);
+  font-size: 15.5px;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  color: #38261b;
+  white-space: nowrap;
+  padding-right: 10px;
+}
+
+.cat-line {
+  flex: 1;
+  height: 1px;
+  background: #c7b3a4;
+}
+
+/* Service Rows */
+.service-list {
+  display: flex;
+  flex-direction: column;
+  gap: 3.5px;
+}
+
+.wedding-list {
+  gap: 2.2px;
+}
+
+.service-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  width: 100%;
+}
+
+.service-left {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  flex: 1;
+  padding-right: 10px;
+}
+
+.bullet {
+  font-size: 13px;
+  color: #5a4435;
+  font-weight: bold;
+}
+
+.service-name {
+  font-family: var(--font-sans);
+  font-size: 13.5px;
+  font-weight: 600;
+  color: #2d1d14;
+  letter-spacing: 0.2px;
+}
+
+.service-sub {
+  font-size: 11.5px;
+  font-weight: 400;
+  color: #634f41;
+  font-style: normal;
+}
+
+.service-price {
+  font-family: var(--font-sans);
+  font-size: 14.5px;
+  font-weight: 700;
+  color: #27170e;
+  letter-spacing: 0.3px;
+  white-space: nowrap;
+}
+
+.wedding-note-italic {
+  font-family: var(--font-sans);
+  font-style: italic;
+  font-size: 10px;
+  font-weight: 500;
+  color: #604d3f;
+  margin-top: 3px;
+  line-height: 1.35;
+  letter-spacing: 0.1px;
+}
+
+/* Course Bullets */
+.course-bullets-match {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5px;
+}
+
+.course-bullets-match li {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+  font-family: var(--font-sans);
+  font-size: 11px;
+  font-weight: 500;
+  color: #3e2e23;
+  line-height: 1.35;
+  letter-spacing: 0.1px;
+}
+
+.course-bullets-match .bullet {
+  font-size: 11px;
+  color: #644b3c;
+  font-weight: bold;
+  flex-shrink: 0;
+}
+
+/* Highlight Pills */
+.highlights-row-match {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  margin: 6px 0 4px 0;
+}
+
+.highlight-pill {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  background: rgba(255, 255, 255, 0.5);
+  border: 1px solid #d4c2b4;
+  border-radius: 20px;
+  padding: 4px 6px;
+  box-shadow: 0 2px 5px rgba(70, 45, 30, 0.04);
+}
+
+.highlight-pill .pill-icon {
+  font-size: 12px;
+}
+
+.highlight-pill .pill-text {
+  font-family: var(--font-sans);
+  font-size: 10px;
+  font-weight: 700;
+  color: #352318;
+  white-space: nowrap;
+  letter-spacing: 0.3px;
+}
+
+/* --- NOTES CATEGORY (LƯU Ý) --- */
+.notes-category {
+  margin-top: 2px;
+}
+
+.notes-heading {
+  font-family: var(--font-sans);
+  font-size: 12px;
+  font-weight: 700;
+  color: #352318;
+  letter-spacing: 1px;
+  margin-bottom: 3px;
+}
+
+.notes-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5px;
+}
+
+.notes-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 7px;
+  line-height: 1.35;
+}
+
+.bullet-star {
+  font-size: 10px;
+  color: #4a3527;
+  margin-top: 1px;
+  flex-shrink: 0;
+}
+
+.note-text {
+  font-family: var(--font-sans);
+  font-size: 11px;
+  color: #48372b;
+  font-weight: 500;
+  letter-spacing: 0.15px;
+}
+
+.footer-divider-line {
+  width: 100%;
+  height: 1px;
+  background: #c7b3a4;
+  margin-top: 6px;
+  margin-bottom: 6px;
+}
+
+/* --- FOOTER / CONTACT --- */
+.card-footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+}
+
+.footer-top-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+}
+
+.footer-bottom-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  text-decoration: none;
+  color: #38261b;
+  transition: opacity 0.2s;
+  white-space: nowrap;
+}
+
+.contact-item:hover {
+  opacity: 0.8;
+}
+
+.contact-icon {
+  width: 14px;
+  height: 14px;
+  stroke: #38261b;
+  flex-shrink: 0;
+}
+
+.contact-val {
+  font-family: var(--font-sans);
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: 0.4px;
+  color: #352318;
+}
+
+.footer-v-divider {
+  width: 1.5px;
+  height: 13px;
+  background: #bfaea0;
+  flex-shrink: 0;
+}
+
+/* ========================================================
+   FULL MOBILE RESPONSIVE OPTIMIZATIONS (<= 600px)
+   ======================================================== */
+@media (max-width: 600px) {
+  body {
+    background: #f2eae2 !important;
+    display: block !important;
+    min-height: 100vh !important;
+  }
+
+  /* Compact Sticky Toolbar (Light Champagne) */
+  .app-toolbar {
+    padding: 8px 12px !important;
+    position: sticky !important;
+    top: 0 !important;
+    width: 100% !important;
+    z-index: 1000 !important;
+    background: rgba(250, 246, 242, 0.95) !important;
+    backdrop-filter: blur(16px) !important;
+    -webkit-backdrop-filter: blur(16px) !important;
+    border-bottom: 1px solid rgba(197, 160, 114, 0.25) !important;
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+  }
+
+  .toolbar-nav {
+    padding: 2px !important;
+    gap: 2px !important;
+    background: rgba(0, 0, 0, 0.05) !important;
+  }
+
+  .nav-tab {
+    padding: 5px 10px !important;
+    font-size: 11.5px !important;
+    color: #5c473a !important;
+  }
+
+  .nav-tab.active {
+    background: #c5a072 !important;
+    color: #241710 !important;
+  }
+
+  .toolbar-actions {
+    gap: 0 !important;
+  }
+
+  #btnPrint,
+  #btnZoom {
+    display: none !important;
+  }
+
+  #btnDownload {
+    padding: 6px 12px !important;
+    font-size: 11.5px !important;
+    height: 32px !important;
+    background: #c5a072 !important;
+    color: #241710 !important;
+  }
+
+  /* Page Viewport & Container on Mobile */
+  .page-viewport {
+    padding: 0 !important;
+    margin: 0 !important;
+    display: block !important;
+    width: 100% !important;
+    overflow-x: hidden !important;
+  }
+
+  .page-container {
+    width: 100% !important;
+    height: auto !important;
+    transform: none !important;
+    display: block !important;
+  }
+
+  /* Fluid Full-Width Card on Mobile - Clean Cream Background */
+  .price-card {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    min-height: calc(100vh - 48px) !important;
+    box-shadow: none !important;
+    border-radius: 0 !important;
+    border: none !important;
+    overflow: visible !important;
+    background: var(--bg-card-gradient) !important;
+  }
+
+  .card-content {
+    padding: 18px 16px 24px 16px !important;
+    height: auto !important;
+    min-height: calc(100vh - 48px) !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 12px !important;
+  }
+
+  /* Header adjustments */
+  .monogram-logo {
+    font-size: 32px !important;
+    height: 34px !important;
+  }
+
+  .brand-name {
+    font-size: 13.5px !important;
+    letter-spacing: 4px !important;
+  }
+
+  .brand-subtitle {
+    font-size: 24px !important;
+  }
+
+  .main-price-title {
+    font-size: 46px !important;
+    transform: translateX(-10px) !important;
+  }
+
+  .curved-badge {
+    right: 4px !important;
+    top: -4px !important;
+    width: 56px !important;
+    height: 56px !important;
+  }
+
+  .course-headline-main {
+    font-size: 18.5px !important;
+  }
+
+  .course-headline-sub {
+    font-size: 9.5px !important;
+    letter-spacing: 2px !important;
+  }
+
+  /* Category & Content Typography on Mobile */
+  .pricing-body {
+    gap: 10px !important;
+    flex: none !important;
+  }
+
+  .category-title {
+    font-size: 14.5px !important;
+    letter-spacing: 2px !important;
+  }
+
+  .service-name {
+    font-size: 13.5px !important;
+  }
+
+  .service-price {
+    font-size: 14px !important;
+  }
+
+  .service-sub {
+    font-size: 11px !important;
+  }
+
+  .course-bullets-match {
+    gap: 3px !important;
+  }
+
+  .course-bullets-match li {
+    font-size: 11.5px !important;
+    line-height: 1.4 !important;
+    word-break: break-word !important;
+  }
+
+  .highlights-row-match {
+    flex-wrap: wrap !important;
+    gap: 6px !important;
+    margin: 8px 0 !important;
+  }
+
+  .highlight-pill {
+    padding: 5px 8px !important;
+  }
+
+  .highlight-pill .pill-text {
+    font-size: 10.5px !important;
+  }
+
+  .notes-category {
+    margin-top: 6px !important;
+  }
+
+  .notes-heading {
+    font-size: 12px !important;
+  }
+
+  .notes-list {
+    gap: 4px !important;
+  }
+
+  .notes-list li {
+    font-size: 11px !important;
+    line-height: 1.4 !important;
+    word-break: break-word !important;
+  }
+
+  .wedding-note-italic {
+    font-size: 10px !important;
+    line-height: 1.4 !important;
+  }
+
+  /* Footer on Mobile */
+  .card-footer {
+    margin-top: 8px !important;
+    gap: 6px !important;
+  }
+
+  .contact-val {
+    font-size: 11px !important;
+  }
+
+  /* Scale mobile background decorations */
+  .decor-mirror-ring {
+    width: 130px !important;
+    height: 170px !important;
+    top: -35px !important;
+    left: -45px !important;
+    opacity: 0.45 !important;
+  }
+
+  .decor-flower-group {
+    width: 140px !important;
+    height: 140px !important;
+    top: -20px !important;
+    right: -20px !important;
+    opacity: 0.65 !important;
+  }
+
+  .decor-brush-group {
+    width: 140px !important;
+    height: 140px !important;
+    bottom: -30px !important;
+    right: -30px !important;
+    opacity: 0.5 !important;
+  }
+}
+
+/* Print Styling */
+@media print {
+  body {
+    background: transparent !important;
+  }
+  .no-print {
+    display: none !important;
+  }
+  .page-viewport {
+    padding: 0 !important;
+  }
+  .price-card {
+    box-shadow: none !important;
+    border-radius: 0 !important;
+    width: 100vw !important;
+    height: 100vh !important;
+  }
+}
